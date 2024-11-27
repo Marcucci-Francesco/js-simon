@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+.count {
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+}
+
+.form {
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+}
