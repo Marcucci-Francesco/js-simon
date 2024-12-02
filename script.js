@@ -8,6 +8,8 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 // Inizializzare tutti gli id e le classi che servono
 const countdownNumber = document.querySelector('.countdown');
 const randomNumbers = document.getElementById('randomNumbers')
+const formInput = document.getElementById('number');
+const messageInput = document.querySelector('.message');
 const input = document.querySelectorAll('input');
 const btn = document.querySelector('.btn');
 const message = document.getElementById('message');
@@ -15,7 +17,7 @@ const message = document.getElementById('message');
 const min = 1;
 const max = 60;
 const totNumbers = 5;
-const timer = 10;
+let timer = 10;
 const totNumbersArray = [];
 let liItems = '';
 
@@ -33,12 +35,16 @@ for(let i = 0; i < totNumbersArray.length; i++){
 }
 randomNumbers.innerHTML = liItems;
 
-
-
-
-
-
-
-
+// faccio partire il countdown per poi far sparire i numeri random ed apparire gli input per inserire i numeri visti
+countdownNumber.innerHTML = timer;
+const countdown = setInterval(() => {
+  countdownNumber.innerHTML = --timer;
+  if(timer === 0){
+    clearInterval(countdown);
+    randomNumbers.classList.add('d-none');
+    formInput.classList.remove('d-none');
+    messageInput.innerHTML = 'Inserisci tutti i numeri apparsi';
+  }
+}, 1000)
 
 
